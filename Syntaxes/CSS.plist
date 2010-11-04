@@ -176,6 +176,56 @@
 					<key>name</key>
 					<string>invalid.deprecated.color.w3c-non-standard-color-name.css</string>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(hsla?|rgba?)\s*(\()</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.misc.css</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.function.css</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.function.css</string>
+						</dict>
+					</dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>(?x)\b
+							    (0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\s*,\s*){2}
+							    (0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\b)
+							    (\s*,\s*((0?\.[0-9]+)|[0-1]))?
+							</string>
+							<key>name</key>
+							<string>constant.other.color.rgb-value.css</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>\b([0-9]{1,2}|100)\s*%,\s*([0-9]{1,2}|100)\s*%,\s*([0-9]{1,2}|100)\s*%</string>
+							<key>name</key>
+							<string>constant.other.color.rgb-percentage.css</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#numeric-values</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 		<key>comment-block</key>
@@ -261,7 +311,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(rgb|url|attr|counter|counters)\s*(\()</string>
+					<string>(url|attr|counter|counters)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -294,18 +344,6 @@
 						<dict>
 							<key>include</key>
 							<string>#string-double</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>(\b0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\s*,\s*)(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\s*,\s*)(0*((1?[0-9]{1,2})|(2([0-4][0-9]|5[0-5])))\b)</string>
-							<key>name</key>
-							<string>constant.other.color.rgb-value.css</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>\b([0-9]{1,2}|100)\s*%,\s*([0-9]{1,2}|100)\s*%,\s*([0-9]{1,2}|100)\s*%</string>
-							<key>name</key>
-							<string>constant.other.color.rgb-percentage.css</string>
 						</dict>
 						<dict>
 							<key>match</key>
