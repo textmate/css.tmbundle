@@ -1,0 +1,136 @@
+/* HTML+HTML5 elements */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+}
+.color-defs {
+    color: #aaa;
+    color: #abcdef;
+    color: red;
+    color: rgb(123,255,201);
+    color: rgba(123,255,201,0.5);
+    color: rgba(123,255,201,.5);
+    color: hsl(85,55%,55%);
+    color: hsla(85,55%,55%,.5);
+}
+
+span:nth-child(even),
+span:nth-child(odd),
+span:nth-child(2n+1),
+span:nth-child(-2n+1),
+span:nth-child(-n+1),
+span:nth-child(1) {
+}
+
+/* These are obviously not valid rules, but they easily show all of the possible values for each
+   rule, so that we're sure we're matching them all */
+.foo {
+    font-size: xx-small x-small small medium large x-large xx-large smaller larger;
+    image-rendering: auto inherit optimizeSpeed optimizeQuality;
+    text-rendering: auto optimizeSpeed optimizeLegibility geometricPrecision inherit;
+    resize: none both horizontal vertical inherit;
+    vertical-align: sub super middle;
+    white-space: pre pre-wrap pre-line;
+    page-break-after: avoid;
+    page-break-inside: avoid !important;
+    word-wrap: break-word normal;
+    zoom: 1;
+    clip: rect(1px 1px 1px 1px);
+    color: rgba(0,0,0,.1);
+    background-color: hsl(235,25%,55%);
+    background-color: #646464;
+    background-image: -moz-linear-gradient(top, #747474 30%, #545454);
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            from(#747474),
+            color-stop(30%, #747474),
+            to(#545454)
+        );
+    border-radius: 4px;
+    box-shadow: 0 0 5px #000;
+    -moz-box-shadow: 0 0 5px #000;
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-transform: rotate(30deg);
+}
+
+div:after,
+div::after,
+div:before,
+div::before,
+div:first-letter,
+div::first-letter,
+div:first-line,
+div::first-line,
+div::selection,
+a:link,
+a:visited,
+a:active,
+a:hover,
+a:focus,
+a:not(a.blah:nth-child(2n+1)),
+a:first,
+a:left,
+a:right,
+a:root,
+a:nth-last-child(-n+1),
+a:nth-of-type(5n),
+a:nth-last-of-type(1),
+a:first-child,
+a:last-child,
+a:first-of-type,
+a:last-of-type,
+a:only-of-type,
+a:empty,
+a:target,
+input:checked,
+input:enabled,
+input:default,
+input:disabled,
+input:indeterminate,
+input:invalid,
+input:optional,
+input:required,
+input:valid,
+div { }
+
+/* Media queries */
+@media all and (orientation:portrait) { 
+    font-weight: normal;    
+}
+@media all and (orientation:landscape) { 
+    font-weight: normal;    
+}
+@media screen and (max-device-width: 480px) {
+    font-weight: normal;    
+}
+@media print {
+    font-weight: normal;    
+}
+@font-face {
+	font-family: 'foo';
+	src: url('foo.eot');
+	src: local('☺'),
+	    url('foo.woff') format('woff'),
+	    url('foo.ttf') format('truetype'),
+	    url('foo.svg#webfontsocnK1fE') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'foo2';
+	src: url('foo2.eot');
+	src: local('☺'),
+	    url('foo2.woff') format('woff'),
+	    url('foo2.ttf') format('truetype'),
+	    url('foo2.svg#webfontsocnK1fE') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
