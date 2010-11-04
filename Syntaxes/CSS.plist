@@ -497,9 +497,37 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:+)\b(after|before|first-child|first-letter|first-line|selection)\b</string>
+					<string>(:+)\b(after|before|first-letter|first-line|selection)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-element.css</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.css</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(:+)\b((first|last)-child|(first|last|only)-of-type|empty|root|target|first|left|right)\b</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.pseudo-class.css</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.css</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(:+)\b(checked|enabled|default|disabled|indeterminate|invalid|optional|required|valid)\b</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.pseudo-class.ui-state.css</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -539,6 +567,38 @@
 							<string>#selector</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.pseudo-class.css</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.css</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.function.css</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.css</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.function.css</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>((:+)\bnth-(?:(?:last-)?child|(?:last-)?of-type))(\()(\-?(?:\d+n?|n)(?:\+\d+)?|even|odd)(\))</string>
 				</dict>
 				<dict>
 					<key>captures</key>
