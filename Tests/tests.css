@@ -103,16 +103,24 @@ div { }
 
 /* Media queries */
 @media all and (orientation:portrait) { 
-    font-weight: normal;    
+    div {
+        font-weight: normal;
+    }
 }
 @media all and (orientation:landscape) { 
-    font-weight: normal;    
+    div {
+        font-weight: normal;
+    }
 }
 @media screen and (max-device-width: 480px) {
-    font-weight: normal;    
+    div {
+        font-weight: normal;
+    }
 }
 @media print {
-    font-weight: normal;    
+    div {
+        font-weight: normal;
+    }
 }
 @font-face {
 	font-family: 'foo';
