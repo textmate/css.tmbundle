@@ -55,7 +55,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(url)\s*(\()\s*</string>
+					<string>\s*(url)\s*(\()\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -96,6 +96,10 @@
 							<string>#string-double</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#media-query-list</string>
 				</dict>
 			</array>
 		</dict>
