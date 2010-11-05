@@ -21,11 +21,11 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#selector</string>
+			<string>#comment-block</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#comment-block</string>
+			<string>#selector</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -506,17 +506,13 @@
 		<key>selector</key>
 		<dict>
 			<key>begin</key>
-			<string>(?=\s*[:.*#a-zA-Z])</string>
+			<string>\s*(?=[:.*#a-zA-Z])</string>
 			<key>end</key>
-			<string>(?=[{)])</string>
+			<string>(?=[/@{)])</string>
 			<key>name</key>
 			<string>meta.selector.css</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#comment-block</string>
-				</dict>
 				<dict>
 					<key>match</key>
 					<string>\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|samp|script|section|select|small|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video)\b</string>
