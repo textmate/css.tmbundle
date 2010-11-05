@@ -23,6 +23,53 @@ time, mark, audio, video {
     color: hsla(85,55%,55%,.5);
 }
 
+#foo { color: blue; }
+.foo { color: blue }
+foo { color: blue; }
+::selection { color: blue; }
+
+div
+{
+    color: blue;
+}
+
+garbagehere
+@import url('foo.css');
+
+garbage
+/* Test */
+
+.sizes {
+    top: -50px;
+    width: 1px;
+    width: 1pt;
+    width: 1ch;
+    width: 1cm;
+    width: 1mm;
+    width: 1in;
+    width: 1em;
+    width: 1rem;
+    width: 1ex;
+    width: 1pc;
+    width: 1deg;
+    width: 1rad;
+    width: 1grad;
+}
+unknowntag {
+    color: blue;
+}
+div {
+    pointer-events: auto none visiblePainted visibleFill visibleStroke visible painted fill stroke all inherit;
+}
+
+body {
+  counter-reset: section;           /* Set the section counter to 0 */
+}
+h1:before {
+  counter-increment: section;      /* Increment the section counter */
+  content: "Section " counter(section) ": "; /* Display the counter */
+}
+
 span:nth-child(even),
 span:nth-child(odd),
 span:nth-child(2n+1),
@@ -101,8 +148,67 @@ input:required,
 input:valid,
 div { }
 
+
 /* Media queries */
-@media all and (orientation:portrait) { 
+@media all {
+    div {
+        font-weight: normal;
+    }
+}
+/* Test */
+@media screen {
+    div {
+        font-weight: normal;
+    }
+}
+@media (width:300px) { div { font-weight: normal; } }
+@media (min-width:300px) { div { font-weight: normal; } }
+@media (max-width:300px) { div { font-weight: normal; } }
+@media (device-width:300px) { div { font-weight: normal; } }
+@media (min-device-width:300px) { div { font-weight: normal; } }
+@media (max-device-width:300px) { div { font-weight: normal; } }
+@media (height:300px) { div { font-weight: normal; } }
+@media (min-height:300px) { div { font-weight: normal; } }
+@media (max-height:300px) { div { font-weight: normal; } }
+@media (device-height:300px) { div { font-weight: normal; } }
+@media (min-device-height:300px) { div { font-weight: normal; } }
+@media (max-device-height:300px) { div { font-weight: normal; } }
+@media (aspect-ratio:20/40) { div { font-weight: normal; } }
+@media (min-aspect-ratio:20/40) { div { font-weight: normal; } }
+@media (max-aspect-ratio:20/40) { div { font-weight: normal; } }
+@media (device-aspect-ratio:20/40) { div { font-weight: normal; } }
+@media (min-device-aspect-ratio:20/40) { div { font-weight: normal; } }
+@media (max-device-aspect-ratio:10/40) { div { font-weight: normal; } }
+@media (color) { div { font-weight: normal; } }
+@media (min-color) { div { font-weight: normal; } }
+@media (max-color) { div { font-weight: normal; } }
+@media (color-index) { div { font-weight: normal; } }
+@media (min-color-index) { div { font-weight: normal; } }
+@media (max-color-index) { div { font-weight: normal; } }
+@media (color:50) { div { font-weight: normal; } }
+@media (resolution:50dpi) { div { font-weight: normal; } }
+@media (resolution:50dpcm) { div { font-weight: normal; } }
+@media (min-resolution:50dpi) { div { font-weight: normal; } }
+@media (max-resolution:50dpi) { div { font-weight: normal; } }
+@media (monochrome) { div { font-weight: normal; } }
+@media (min-monochrome:1) { div { font-weight: normal; } }
+@media (max-monochrome:1) { div { font-weight: normal; } }
+@media (scan:interlace) { div { font-weight: normal; } }
+@media (scan:progressive) { div { font-weight: normal; } }
+@media (grid) { div { font-weight: normal; } }
+@media (orientation:portrait) { div { font-weight: normal; } }
+@media (orientation:landscape) { div { font-weight: normal; } }
+@media { div { font-weight: bold; } }
+@media all and (min-width: 500px) and (color) { div { font-weight: bold; } }
+@media (min-width: 500px) { div { font-weight: bold; } }
+@media screen and (color), projection and (color) { div { font-weight: bold; } }
+@media only screen { div { font-weight: normal; } }
+@media screen { div { font-weight: normal; } }
+@media screen, print { div { font-weight: normal; } }
+
+garbage
+
+@media all and (orientation:portrait) {
     div {
         font-weight: normal;
     }
