@@ -563,7 +563,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:+)\b(after|before|first-letter|first-line|selection)\b</string>
+					<string>(:+)(after|before|first-letter|first-line|selection)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-element.css</string>
 				</dict>
@@ -577,7 +577,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:+)\b((first|last)-child|(first|last|only)-of-type|empty|root|target|first|left|right)\b</string>
+					<string>(:)((first|last)-child|(first|last|only)-of-type|empty|root|target|first|left|right)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-class.css</string>
 				</dict>
@@ -591,7 +591,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:+)\b(checked|enabled|default|disabled|indeterminate|invalid|optional|required|valid)\b</string>
+					<string>(:)(checked|enabled|default|disabled|indeterminate|invalid|optional|required|valid)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-class.ui-state.css</string>
 				</dict>
@@ -664,7 +664,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>((:+)\bnth-(?:(?:last-)?child|(?:last-)?of-type))(\()(\-?(?:\d+n?|n)(?:\+\d+)?|even|odd)(\))</string>
+					<string>((:)nth-(?:(?:last-)?child|(?:last-)?of-type))(\()(\-?(?:\d+n?|n)(?:\+\d+)?|even|odd)(\))</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -676,7 +676,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:)\b(active|hover|link|visited|focus)\b</string>
+					<string>(:)(active|hover|link|visited|focus)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-class.css</string>
 				</dict>
