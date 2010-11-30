@@ -61,7 +61,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*((@)import\b)</string>
+			<string>\s*((@)import\b)\s*</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -84,6 +84,10 @@
 				<dict>
 					<key>include</key>
 					<string>#string-double</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-single</string>
 				</dict>
 				<dict>
 					<key>begin</key>

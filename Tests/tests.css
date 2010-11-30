@@ -38,6 +38,8 @@ div
 
 garbagehere
 @import url('foo.css');
+@import 'foo.css';
+@import "foo.css";
 
 garbage
 /* Test */
