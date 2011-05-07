@@ -12,7 +12,7 @@
 	<key>foldingStartMarker</key>
 	<string>/\*\*(?!\*)|\{\s*($|/\*(?!.*?\*/.*\S))|\/\*\s*@group\s*.*\s*\*\/</string>
 	<key>foldingStopMarker</key>
-	<string>(?<!\*)\*\*/|^\s*\}|\/*\s*@end\s*\*\/</string>
+	<string>(?&lt;!\*)\*\*/|^\s*\}|\/*\s*@end\s*\*\/</string>
 	<key>keyEquivalent</key>
 	<string>^~C</string>
 	<key>name</key>
