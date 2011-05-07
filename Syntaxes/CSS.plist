@@ -10,9 +10,9 @@
 		<string>css.erb</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>/\*\*(?!\*)|\{\s*($|/\*(?!.*?\*/.*\S))</string>
+	<string>/\*\*(?!\*)|\{\s*($|/\*(?!.*?\*/.*\S))|\/\*\s*@group\s*.*\s*\*\/</string>
 	<key>foldingStopMarker</key>
-	<string>(?&lt;!\*)\*\*/|^\s*\}</string>
+	<string>(?&lt;!\*)\*\*/|^\s*\}|\/*\s*@end\s*\*\/</string>
 	<key>keyEquivalent</key>
 	<string>^~C</string>
 	<key>name</key>
