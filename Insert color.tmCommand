@@ -214,7 +214,7 @@ print request_color(input).downcase
 	<key>outputLocation</key>
 	<string>replaceInput</string>
 	<key>scope</key>
-	<string>source.css, meta.tag string.quoted -source, source.scss, source.plist</string>
+	<string>source.css, meta.tag string.quoted -source, source.scss</string>
 	<key>uuid</key>
 	<string>B38FF940-EBB0-4104-9F59-7B6B2D9DCBD7</string>
 	<key>version</key>
