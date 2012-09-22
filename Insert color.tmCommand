@@ -175,32 +175,27 @@ def request_color(string = nil)
   string = $1 * 2 + $2 * 2 + $3 * 2 if string =~ /^(.)(.)(.)$/
   def_col = ' default color {' + string.scan(/../).map { |i| i.hex * 257 }.join(",") + '}'
   begin
-    col = `osascript &lt;&lt; EOT
-tell app "AppleScript Runner"
-	activate
-	set RGB_values to choose color #{def_col}
-	set the hex_list to {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"}
-	set the the hex_value to ""
-	repeat with i from 1 to the count of the RGB_values
-		set this_value to (item i of the RGB_values) div 256
-		if this_value is 256 then set this_value to 255
-		set x to item ((this_value div 16) + 1) of the hex_list
-		set y to item (((this_value / 16 mod 1) * 16) + 1) of the hex_list
-		set the hex_value to (the hex_value &amp; x &amp; y) as string
-	end repeat
-	return ("#" &amp; the hex_value) as string
-end
-EOT`
+    col = %x{osascript -e 'tell app "AppleScript Runner" to activate' \
+                       -e 'tell app "AppleScript Runner" to choose color#{def_col}'}
   rescue
     return col = string
   end
   reactivate
   exit 200 if col.empty? # user cancelled -- when it happens, an exception is written to stderr
-  color = col.strip
+  col = col.scan(/\d+/).map { |i| "%02X" % (i.to_i / 257) }.join("")
+  # Add : # ; back if they were in the input
+  m = original_color.match(/(:? ?).*?( ?;?)$/)
+  color = m[1] + prefix
+  suffix = m[2].empty? ? "" : "$0" + m[2]
+  
+  if /(.)\1(.)\2(.)\3/.match(col)
+    color &lt;&lt; $1 + $2 + $3 + suffix
+  else
+    color &lt;&lt; col + suffix
+  end
 end
 
 print request_color(input).downcase
-
 </string>
 	<key>fallbackInput</key>
 	<string>scope</string>
