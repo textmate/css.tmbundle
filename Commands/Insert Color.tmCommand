@@ -162,7 +162,8 @@ COLOURS = {
 
 # Bring back the focus to document. Can't tell TM to activate, so use open -a
 def reactivate
-  `osascript &amp;&gt;/dev/null -e 'tell app "SystemUIServer" to activate'; open -a TextMate`
+  tm = ENV['TM_APP_PATH'] || "TextMate"
+  `osascript &amp;&gt;/dev/null -e 'tell app "SystemUIServer" to activate'; open -a '#{tm}'`
 end
 
 def request_color(string = nil)
