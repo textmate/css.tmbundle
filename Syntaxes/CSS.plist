@@ -150,15 +150,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\s*(\})</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.section.property-list.end.css</string>
-				</dict>
-			</dict>
+			<string>(?!\G)</string>
 			<key>name</key>
 			<string>meta.at-rule.font-face.css</string>
 			<key>patterns</key>
@@ -244,15 +236,7 @@
 			<key>begin</key>
 			<string>(?=\{)</string>
 			<key>end</key>
-			<string>(\})</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.section.property-list.end.css</string>
-				</dict>
-			</dict>
+			<string>(?!\G)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -645,7 +629,15 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?=\s*\})</string>
+			<string>\}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.property-list.end.css</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.property-list.css</string>
 			<key>patterns</key>
