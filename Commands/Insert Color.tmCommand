@@ -4,16 +4,12 @@
 <dict>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
-	<key>hideFromUser</key>
-	<true/>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby
+	<string>#!/usr/bin/env ruby -wKu
+# encoding: UTF-8
 
-require ENV['TM_SUPPORT_PATH'] + "/lib/ui"
-require ENV['TM_SUPPORT_PATH'] + "/lib/exit_codes"
-colour = STDIN.read
+input = STDIN.read.dup
 
-# http://www.w3schools.com/css/css_colornames.asp
 COLOURS = {
   'aliceblue'            =&gt; 'F0F8FF',
   'antiquewhite'         =&gt; 'FAEBD7',
@@ -164,40 +160,64 @@ COLOURS = {
   'yellowgreen'          =&gt; '9ACD32',
 }
 
-if colour.length &gt; 0 and colour[0] != ?#
-  colour.downcase!
-  # Convert named colours to their hex values
-  colour = '#' + COLOURS[colour] if COLOURS.has_key? colour
+# Bring back the focus to document. Can't tell TM to activate, so use open -a
+def reactivate
+  tm = ENV['TM_APP_PATH'] || "TextMate"
+  `osascript &amp;&gt;/dev/null -e 'tell app "SystemUIServer" to activate'; open -a '#{tm}'`
 end
 
-if res = TextMate::UI.request_color(colour)
-  print res
-else
-  TextMate.exit_discard
+def request_color(string = nil)
+  original_color = string.dup
+  # Convert named colours to their hex values
+  string = '#' + COLOURS[string.downcase] if COLOURS.has_key? string.downcase
+  string = '#999' unless string.to_s.match(/#?[0-9A-F]{3,6}/i)
+  color  = string
+  prefix, string = string.match(/(#?)([0-9A-F]{3,6})/i)[1,2]
+  string = $1 * 2 + $2 * 2 + $3 * 2 if string =~ /^(.)(.)(.)$/
+  def_col = ' default color {' + string.scan(/../).map { |i| i.hex * 257 }.join(",") + '}'
+  begin
+    col = %x{osascript -e 'tell app "AppleScript Runner" to activate' \
+                       -e 'tell app "AppleScript Runner" to choose color#{def_col}'}
+  rescue
+    return col = string
+  end
+  reactivate
+  exit 200 if col.empty? # user cancelled -- when it happens, an exception is written to stderr
+  col = col.scan(/\d+/).map { |i| "%02X" % (i.to_i / 257) }.join("")
+  # Add : # ; back if they were in the input
+  m = original_color.match(/(:? ?).*?( ?;?)$/)
+  color = m[1] + prefix
+  suffix = m[2].empty? ? "" : "$0" + m[2]
+  
+  if /(.)\1(.)\2(.)\3/.match(col)
+    color &lt;&lt; $1 + $2 + $3 + suffix
+  else
+    color &lt;&lt; col + suffix
+  end
 end
+
+print request_color(input).downcase
 </string>
 	<key>fallbackInput</key>
-	<string>word</string>
+	<string>scope</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>word</string>
 	<key>inputFormat</key>
 	<string>text</string>
-	<key>isDisabled</key>
-	<true/>
 	<key>keyEquivalent</key>
 	<string>@C</string>
 	<key>name</key>
 	<string>Insert Color…</string>
 	<key>outputCaret</key>
-	<string>heuristic</string>
+	<string>afterOutput</string>
 	<key>outputFormat</key>
-	<string>text</string>
+	<string>snippet</string>
 	<key>outputLocation</key>
 	<string>replaceInput</string>
 	<key>scope</key>
-	<string>source.css, meta.tag string.quoted -source</string>
+	<string>source.css, meta.tag string.quoted -source, source.scss</string>
 	<key>uuid</key>
-	<string>CC30D708-6E49-11D9-B411-000D93589AF6</string>
+	<string>B38FF940-EBB0-4104-9F59-7B6B2D9DCBD7</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>
