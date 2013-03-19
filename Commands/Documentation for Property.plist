@@ -137,6 +137,8 @@ $props = {
 	"z-index"	=&gt; "visuren.html#propdef-z-index",
 }
 
+require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes.rb"
+
 cur_line = ENV['TM_CURRENT_LINE']
 cur_word = ENV['TM_CURRENT_WORD']
 
@@ -147,7 +149,7 @@ def request_prop_name
   s = `\"#{ENV['TM_SUPPORT_PATH']}/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog\" inputbox --float --title 'Documentation for Property' --informative-text 'What property would you like to lookup?' --text '#{$prop_name}' --button1 'Lookup' --button2 'Cancel' --button3 'Show All Properties'`
   case (a = s.split("\n"))[0].to_i
     when 1 then $props[a[1].to_s] || "propidx.html"
-    when 2 then abort "&lt;script&gt;window.close()&lt;/script&gt;"
+    when 2 then TextMate.exit_discard
     when 3 then "propidx.html"
   end
 end
