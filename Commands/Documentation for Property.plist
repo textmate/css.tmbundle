@@ -12,6 +12,9 @@
 # The mapping below was generated using:
 # echo '$props = {'; curl -s http://meiert.com/en/indices/css-properties/ | ruby -ne 'puts %{\t"#{$2}"\t=&gt; "#{$1}",} if $_ =~ %r{&lt;th scope="row"&gt;&lt;a href="(.+?)"&gt;&lt;code&gt;(.+?)&lt;/code&gt;&lt;/a&gt;&lt;/th&gt;}'; echo '}'
 
+require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes.rb"
+require "#{ENV['TM_SUPPORT_PATH']}/lib/ui.rb"
+
 $props = {
 	"align-content"	=&gt; "http://www.w3.org/TR/css3-flexbox/#align-content",
 	"align-items"	=&gt; "http://www.w3.org/TR/css3-flexbox/#align-items",
@@ -321,8 +324,6 @@ $props = {
 	"z-index"	=&gt; "http://www.w3.org/TR/CSS21/visuren.html#propdef-z-index",
 }
 
-require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes.rb"
-
 cur_line = ENV['TM_CURRENT_LINE']
 cur_word = ENV['TM_CURRENT_WORD']
 
@@ -330,11 +331,16 @@ cur_word = ENV['TM_CURRENT_WORD']
 $prop_name = /[-\w]*#{Regexp.escape cur_word}[-\w]*/.match(cur_line)[0]
 
 def request_prop_name
-  s = `\"#{ENV['TM_SUPPORT_PATH']}/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog\" inputbox --float --title 'Documentation for Property' --informative-text 'What property would you like to lookup?' --text '#{$prop_name}' --button1 'Lookup' --button2 'Cancel' --button3 'Show All Properties'`
-  case (a = s.split("\n"))[0].to_i
-    when 1 then $props[a[1].to_s] || "http://meiert.com/en/indices/css-properties/"
-    when 2 then TextMate.exit_discard
-    when 3 then "http://meiert.com/en/indices/css-properties/"
+  s = TextMate::UI.request_string(
+    :title =&gt; 'Documentation for Property', 
+    :prompt =&gt; 'Which property would you like to lookup?',
+    :button1 =&gt; 'Lookup'
+  )
+  
+  unless s.nil? or s.length &lt; 1
+    $props[s] || "http://meiert.com/en/indices/css-properties/"
+  else
+    TextMate.exit_discard
   end
 end
 
