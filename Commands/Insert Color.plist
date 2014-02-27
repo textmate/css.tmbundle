@@ -10,10 +10,10 @@
 
 require ENV['TM_SUPPORT_PATH'] + "/lib/ui"
 require ENV['TM_SUPPORT_PATH'] + "/lib/exit_codes"
-colour = STDIN.read
+color = STDIN.read
 
 # http://www.w3schools.com/css/css_colornames.asp
-COLOURS = {
+COLORS = {
   'aliceblue'            =&gt; 'F0F8FF',
   'antiquewhite'         =&gt; 'FAEBD7',
   'aqua'                 =&gt; '00FFFF',
@@ -163,16 +163,20 @@ COLOURS = {
   'yellowgreen'          =&gt; '9ACD32',
 }
 
-if colour.length &gt; 0 and colour[0] != ?#
-  colour.downcase!
-  # Convert named colours to their hex values
-  colour = '#' + COLOURS[colour] if COLOURS.has_key? colour
-end
-
-if res = TextMate::UI.request_color(colour)
-  print res
+if color.match(/^(\w+|#?[0-9A-F]{3,6})$/)
+  color = '#' + COLORS[color] if COLORS.has_key?(color.downcase)
+  
+  if res = TextMate::UI.request_color(color)
+    TextMate.exit_replace_text(res)
+  else
+    TextMate.exit_discard
+  end
 else
-  TextMate.exit_discard
+  if res = TextMate::UI.request_color("")
+    print res
+  else
+    TextMate.exit_discard
+  end
 end
 </string>
 	<key>fallbackInput</key>
@@ -188,9 +192,9 @@ end
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
-	<string>snippet</string>
+	<string>text</string>
 	<key>outputLocation</key>
-	<string>replaceInput</string>
+	<string>atCaret</string>
 	<key>scope</key>
 	<string>source.css, meta.tag string.quoted -source, source.scss</string>
 	<key>uuid</key>
