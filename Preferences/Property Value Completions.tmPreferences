@@ -13,6 +13,7 @@
 			<string>absolute</string>
 			<string>all-scroll</string>
 			<string>always</string>
+			<string>antialiased</string>
 			<string>auto</string>
 			<string>baseline</string>
 			<string>below</string>
@@ -45,6 +46,7 @@
 			<string>e-resize</string>
 			<string>ellipsis</string>
 			<string>fixed</string>
+			<string>geometricPrecision</string>
 			<string>groove</string>
 			<string>hand</string>
 			<string>help</string>
@@ -82,6 +84,7 @@
 			<string>move</string>
 			<string>n-resize</string>
 			<string>ne-resize</string>
+			<string>never</string>
 			<string>newspaper</string>
 			<string>no-drop</string>
 			<string>no-repeat</string>
@@ -91,6 +94,8 @@
 			<string>nowrap</string>
 			<string>nw-resize</string>
 			<string>oblique</string>
+			<string>optimizeLegibility</string>
+			<string>optimizeSpeed</string>
 			<string>outset</string>
 			<string>outside</string>
 			<string>overline</string>
@@ -113,6 +118,7 @@
 			<string>square</string>
 			<string>static</string>
 			<string>strict</string>
+			<string>subpixel-antialiased</string>
 			<string>super</string>
 			<string>sw-resize</string>
 			<string>table-footer-group</string>

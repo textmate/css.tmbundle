@@ -11,6 +11,7 @@
 		<key>completions</key>
 		<array>
 			<string>-moz-border-radius</string>
+			<string>-webkit-font-smoothing</string>
 			<string>azimuth</string>
 			<string>background</string>
 			<string>background-attachment</string>
