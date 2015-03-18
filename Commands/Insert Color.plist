@@ -163,7 +163,7 @@ COLORS = {
   'yellowgreen'          =&gt; '9ACD32',
 }
 
-if color.match(/^(\w+|#?[0-9A-F]{3,6})$/)
+if color.match(/^(\w+|#?[0-9A-Fa-f]{3,6})$/)
   color = '#' + COLORS[color] if COLORS.has_key?(color.downcase)
   
   if res = TextMate::UI.request_color(color)
