@@ -167,6 +167,7 @@ if color.match(/^(\w+|#?[0-9A-Fa-f]{3,6})$/)
   color = '#' + COLORS[color] if COLORS.has_key?(color.downcase)
   
   if res = TextMate::UI.request_color(color)
+    res = res.downcase if color.downcase == color
     TextMate.exit_replace_text(res)
   else
     TextMate.exit_discard
