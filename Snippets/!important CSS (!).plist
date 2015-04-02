@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>!important CSS</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>tabTrigger</key>
 	<string>!</string>
 	<key>uuid</key>
