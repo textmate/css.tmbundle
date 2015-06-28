@@ -103,6 +103,8 @@
 				<string>^\s+</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceString</key>
+				<string></string>
 			</dict>
 			<key>command</key>
 			<string>findWithOptions:</string>
