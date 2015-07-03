@@ -13,6 +13,8 @@
 				<string>\n+</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string>\n</string>
 			</dict>
@@ -28,6 +30,8 @@
 				<string>[ \t]+</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string> </string>
 			</dict>
@@ -43,6 +47,8 @@
 				<string>(?m)([;:])\s+</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string>$1</string>
 			</dict>
@@ -58,6 +64,8 @@
 				<string>\s*}\s*</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string>}\n</string>
 			</dict>
@@ -73,6 +81,8 @@
 				<string>\s*{\s*</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string>{</string>
 			</dict>
@@ -88,6 +98,8 @@
 				<string>[ \t]*,[ \t]*</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string>,</string>
 			</dict>
@@ -103,6 +115,8 @@
 				<string>^\s+</string>
 				<key>regularExpression</key>
 				<true/>
+				<key>replaceAllScope</key>
+				<string>selection</string>
 				<key>replaceString</key>
 				<string></string>
 			</dict>
