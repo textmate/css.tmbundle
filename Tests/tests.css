@@ -11,7 +11,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
 }
@@ -86,6 +86,8 @@ span:nth-child(1) {
 /* These are obviously not valid rules, but they easily show all of the possible values for each
    rule, so that we're sure we're matching them all */
 .foo {
+    transform: none matrix(0,.99,.99,0,0,1) matrix3d(.1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16) translate(-20px,100px) translate3d(-1px,2px,30px) translateX(-100px) translateY(-100px) translateZ(-100px) scale(0.5,2) scale3d(2,0.5,10) scaleX(0.5) scaleY(.5) scaleZ(.5) rotate(30deg) rotate3d(0.5,20,10,45deg) rotateX(45deg) rotateY(45deg) rotateZ(9deg) skew(2deg,1deg) skewX(30deg) skewY(30deg) perspective(100px) initial inherit;
+    transform-style: flat preserve-3d initial inherit;
     font-size: xx-small x-small small medium large x-large xx-large smaller larger;
     image-rendering: auto inherit optimizeSpeed optimizeQuality;
     text-rendering: auto optimizeSpeed optimizeLegibility geometricPrecision inherit;
@@ -218,7 +220,7 @@ garbage
         font-weight: normal;
     }
 }
-@media all and (orientation:landscape) { 
+@media all and (orientation:landscape) {
     div {
         font-weight: normal;
     }
