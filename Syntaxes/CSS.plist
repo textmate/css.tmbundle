@@ -608,10 +608,10 @@
 						</dict>
 					</array>
 				</dict>
-                <dict>
-                    <key>begin</key>
-                    <string>(matrix(3d)?|perspective|(rotate|scale|translate)([XYZ]|3d)?|skew[XY]?)\s*(\()</string>
-                    <key>beginCaptures</key>
+                                <dict>
+                                        <key>begin</key>
+                                        <string>(matrix(3d)?|perspective|(rotate|scale|translate)([XYZ]|3d)?|skew[XY]?)\s*(\()</string>
+                                        <key>beginCaptures</key>
 					<dict>
 						<key>1</key>
 						<dict>
@@ -641,7 +641,7 @@
 							<string>#numeric-values</string>
 						</dict>
 					</array>
-                </dict>
+                                </dict>
 				<dict>
 					<key>match</key>
 					<string>\!\s*important</string>
