@@ -3,15 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Symbol List: Selector</string>
+	<string>Symbol List: Selector Embedded</string>
 	<key>scope</key>
-	<string>source.css meta.selector, source.css meta.at-rule.media</string>
+	<string>* source.css meta.selector, * source.css meta.at-rule.media</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
+		<key>symbolTransformation</key>
+		<string>s/^\s*/CSS: /; s/\s+/ /g</string>
 	</dict>
 	<key>uuid</key>
-	<string>17B2DD5B-D2EA-4DC5-9C7D-B09B505156C5</string>
+	<string>729A1696-8A3F-49D4-9128-E6AA20179A56</string>
 </dict>
 </plist>
