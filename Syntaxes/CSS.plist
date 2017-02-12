@@ -281,7 +281,7 @@
 					<string>\b(ActiveBorder|ActiveCaption|AppWorkspace|Background|ButtonFace|ButtonHighlight|ButtonShadow|ButtonText|CaptionText|GrayText|Highlight|HighlightText|InactiveBorder|InactiveCaption|InactiveCaptionText|InfoBackground|InfoText|Menu|MenuText|Scrollbar|ThreeDDarkShadow|ThreeDFace|ThreeDHighlight|ThreeDLightShadow|ThreeDShadow|Window|WindowFrame|WindowText)\b</string>
 					<key>name</key>
 					<string>invalid.deprecated.color.system.css</string>
-                </dict>
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(hsla?|rgba?)\s*(\()</string>
