@@ -18,7 +18,7 @@ time, mark, audio, video {
 .color-defs {
     color: #aaa;
     color: #abcdef;
-    color: red;
+    color: red, rebeccapurple, currentColor, ThreeDFace;
     color: rgb(123,255,201);
     color: rgba(123,255,201,0.5);
     color: rgba(123,255,201,.5);
