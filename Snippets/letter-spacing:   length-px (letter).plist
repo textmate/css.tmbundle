@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>letter-spacing: px</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>tabTrigger</key>
 	<string>letter</string>
 	<key>uuid</key>

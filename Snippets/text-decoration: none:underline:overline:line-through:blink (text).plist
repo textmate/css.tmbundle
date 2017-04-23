@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>text-decoration: none/underline/overline/line-through/blink</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>tabTrigger</key>
 	<string>text</string>
 	<key>uuid</key>

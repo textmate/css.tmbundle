@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>position: type</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>tabTrigger</key>
 	<string>position</string>
 	<key>uuid</key>

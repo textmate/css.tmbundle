@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>opacity: [for Safari, FF &amp; IE]</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>tabTrigger</key>
 	<string>opacity</string>
 	<key>uuid</key>

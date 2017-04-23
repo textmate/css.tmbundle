@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>white-space: normal/pre/nowrap</string>
 	<key>scope</key>
-	<string>source.css</string>
+	<string>source.css, source.scss</string>
 	<key>tabTrigger</key>
 	<string>white</string>
 	<key>uuid</key>
