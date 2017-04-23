@@ -741,7 +741,7 @@
 			<key>begin</key>
 			<string>\s*(?=[:.*#a-zA-Z])</string>
 			<key>end</key>
-			<string>(?=[/@{)])</string>
+			<string>(?=[/@{)]|```|&lt;\/style&gt;)</string>
 			<key>name</key>
 			<string>meta.selector.css</string>
 			<key>patterns</key>
