@@ -133,6 +133,7 @@ COLORS = {
   'plum'                 =&gt; 'DDA0DD',
   'powderblue'           =&gt; 'B0E0E6',
   'purple'               =&gt; '800080',
+  'rebeccapurple'        =&gt; '663399',
   'red'                  =&gt; 'FF0000',
   'rosybrown'            =&gt; 'BC8F8F',
   'royalblue'            =&gt; '4169E1',
