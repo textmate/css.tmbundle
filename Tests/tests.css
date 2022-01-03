@@ -255,3 +255,8 @@ garbage
 	font-weight: normal;
 	font-style: italic;
 }
+
+@keyframes fade-in-scale-keys{
+  0% { scale: 0.95; opacity: 0; }
+  100% { scale: 1.0; opacity: 1; }
+}
